@@ -19,7 +19,7 @@
 
     "modules-left":["sway/workspaces","custom/media"],
     "modules-center":["sway/window"],
-    "modules-right":["idle_inhibitor", "custom/updater", "pulseaudio", "memory", "temperature", "backlight", "battery", "network", "clock", "custom/power"],
+    "modules-right":["idle_inhibitor", "custom/updater", "pulseaudio", "temperature", "backlight", "battery", "network", "custom/clock", "custom/power"],
 
     // Modules configuration
     "sway/workspaces": {
@@ -43,6 +43,11 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+    "custom/clock": {
+        "exec": "date +'%l:%M%p'",
+	"tooltip": false,
+        "interval": 45
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -85,7 +90,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ",
         "format-ethernet": "Connected  ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -110,7 +115,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "foot pamix"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -124,16 +129,13 @@
         "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
         "on-click": "playerctl play-pause"
     },
-    "custom/launcher":{
-        "format": "",
-        "on-click": "wofi --show drun -x 10 -y 10"
-    },
     "custom/power":{
-        "format": "  ",
+        "format": "⏻",
         "on-click": "nwg-bar"
     },
     "custom/updater":{
-        "format": "  {} Updates",
+        "format": "{} ",
+	"tooltip-format": "{} Updates Available",
         "exec": "apt-get -q -y --ignore-hold --allow-change-held-packages --allow-unauthenticated -s dist-upgrade | /bin/grep  ^Inst | wc -l",
         "interval": 3600,
     },

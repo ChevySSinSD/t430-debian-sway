@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0px;
     font-family: RobotoMono Nerd Font;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 0;
 }
 
@@ -18,6 +18,7 @@ window#waybar.hidden {
 }
 
 #clock,
+#custom-clock,
 #battery,
 #cpu,
 #memory,
@@ -44,7 +45,7 @@ window#waybar.hidden {
     padding: 0 14px;
     color: #f8f8f2;
     background-color: #282A36;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #window,
