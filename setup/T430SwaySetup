@@ -1,0 +1,11 @@
+#!/bin/bash
+
+### Install Sway ###
+sudo apt install sway swaybg swayidle waybar
+
+### Install Google Chrome ###
+wget -N -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
+
+### Install Audio Controls
+sudo apt install pulseaudio 

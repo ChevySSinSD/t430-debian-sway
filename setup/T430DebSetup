@@ -1,0 +1,95 @@
+#!/bin/bash
+
+### Network and WiFi Setup ###
+
+# Install Network Manager
+sudo apt update && sudo apt -qq install network-manager
+
+# Bring down wireless interface(s)
+for wlp in $( sudo ifquery -l --allow=hotplug | grep wlp ); do
+	sudo ifdown $wlp
+done
+for wlp in $( sudo ifquery -l | grep wlp ); do
+	sudo ifdown $wlp
+done
+
+# Remove interface file(s) if they exist
+[ -f /etc/network/interfaces.d/* ] && sudo rm /etc/network/interfaces.d/*
+
+# Restart services
+systemctl restart networking
+systemctl restart NetworkManager
+
+# Ping google.com, if it doesn't work, ask user for input
+until ping -c1 google.com >/dev/null 2>&1;
+do
+	read -p "Ping of google.com failed: Open NetworkManager, retry, continue, or quit? (N/r/c/q): " -n 1 -r
+	case $REPLY in
+		[Rr]* ) ;;		# Retry the ping (continue until loop)
+		[Cc]* ) break;;		# Continue (break out of the until loop, continue with script)
+		[Qq]* ) exit;;		# Quit (Exit the script completely)
+		[Nn]*|* ) nmtui;;	# Open NetworkManager TUI and then continue loop for ping check
+	esac
+done
+
+# Setup SSH
+ssh-keygen -t ed25519 -C "ChevySSinSD@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+### Apt source list setup ###
+
+# Add Multimedia Repository keyring and source lists
+until wget -N -P ~/Downloads https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb;
+do
+	read -p "There was an error downloading multimedia repository keyring .deb file: Retry, continue, or quit (R/c/q): " -n 1 -r
+	case $REPLY in
+		[Cc]* ) break;;		# Continue (break out of the while loop, continue with script)
+		[Qq]* ) exit;;		# Quit (Exit the script completely)
+		[Rr]*|* ) ;;		# Retry (continue loop)
+	esac
+done
+sudo apt -qq install ~/Downloads/deb-multimedia-keyring_2016.8.1_all.deb
+echo "deb https://www.deb-multimedia.org stable main non-free" | sudo tee /etc/apt/sources.list.d/multimedia.list > /dev/null
+echo "deb https://www.deb-multimedia.org stable-backports main" | sudo tee -a /etc/apt/sources.list.d/multimedia.list > /dev/null
+
+# Add GitHub CLI keyring and source list
+sudo apt install curl
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+# Update Apt
+sudo apt update && sudo apt upgrade && sudo apt autoremove
+
+### Install required drivers and firmware ###
+# Download and install Bluetooth Firmware
+wget -N -P ~/Downloads https://github.com/winterheart/broadcom-bt-firmware/releases/latest/download/broadcom-bt-firmware-10.1.0.1115.deb
+sudo apt -qq install ~/Downloads/broadcom-bt-firmware-10.1.0.1115.deb
+
+# Install brother scanner driver
+wget -N -P ~/Downloads https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb
+sudo apt install ~/Downloads/brscan4-0.4.11-1.amd64.deb
+sudo brsaneconfig4 -a name=Scanner model=HLL2380DW ip=192.168.88.238 #Setup network scanner
+
+### Apt packages - Install ###
+#	neofetch				TUI System info tool
+#	htop					TUI System process monitor tool
+#	git					Software version control
+#	gh					GitHub CLI
+sudo apt install neofetch htop git gh
+
+### Git and GitHub Setup ###
+
+# Git Config
+git config --global user.name "ChevySSinSD"
+git config --global user.email "ChevySSinSD@gmail.com"
+
+# GitHub CLI Setup
+gh auth login
+
+### Finish Install ###
+# Apt cleanup
+sudo apt update && sudo apt upgrade && sudo apt autoremove
+
+# Reboot the system
+sudo reboot
