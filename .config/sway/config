@@ -35,6 +35,18 @@ set $laptop LVDS-1
 # Directory for wallpapers
 set $wallpapers_path $HOME/Pictures/Wallpapers
 
+#   _       _   _      ___   ___   _       __  
+#  \ \    /| | | |\ | | | \ / / \ \ \    /( (` 
+#   \_\/\/ |_| |_| \| |_|_/ \_\_/  \_\/\/ _)_) 
+
+# Set Font
+font pango:RobotoMono Hack 13,
+
+# Set Window Borders
+default_border none
+gaps outer 5
+gaps inner 5
+
 #   ___   _    _____  ___   _    _____ 
 #  / / \ | | |  | |  | |_) | | |  | |  
 #  \_\_/ \_\_/  |_|  |_|   \_\_/  |_|  
@@ -76,19 +88,13 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
+#   _   _      ___   _    _____ 
+#  | | | |\ | | |_) | | |  | |  
+#  |_| |_| \| |_|   \_\_/  |_|  
 #
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+
+# Set NumLock on
+input * xkb_numlock enable
 
 #   _     ____  _         ___   _   _      ___   _   _      __    __  
 #  | |_/ | |_  \ \_/     | |_) | | | |\ | | | \ | | | |\ | / /`_ ( (` 
