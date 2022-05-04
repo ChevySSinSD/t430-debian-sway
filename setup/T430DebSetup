@@ -3,7 +3,7 @@
 ### Network and WiFi Setup ###
 
 # Install Network Manager
-sudo apt update && sudo apt -qq install network-manager
+sudo apt update && sudo apt install network-manager
 
 # Bring down wireless interface(s)
 for wlp in $( sudo ifquery -l --allow=hotplug | grep wlp ); do
@@ -40,7 +40,7 @@ ssh-add ~/.ssh/id_ed25519
 ### Apt source list setup ###
 
 # Add Multimedia Repository keyring and source lists
-until wget -N -P ~/Downloads https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb;
+until wget -nv -N -P ~/Downloads https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb;
 do
 	read -p "There was an error downloading multimedia repository keyring .deb file: Retry, continue, or quit (R/c/q): " -n 1 -r
 	case $REPLY in
@@ -49,7 +49,7 @@ do
 		[Rr]*|* ) ;;		# Retry (continue loop)
 	esac
 done
-sudo apt -qq install ~/Downloads/deb-multimedia-keyring_2016.8.1_all.deb
+sudo apt install ~/Downloads/deb-multimedia-keyring_2016.8.1_all.deb
 echo "deb https://www.deb-multimedia.org stable main non-free" | sudo tee /etc/apt/sources.list.d/multimedia.list > /dev/null
 echo "deb https://www.deb-multimedia.org stable-backports main" | sudo tee -a /etc/apt/sources.list.d/multimedia.list > /dev/null
 
@@ -63,11 +63,11 @@ sudo apt update && sudo apt upgrade && sudo apt autoremove
 
 ### Install required drivers and firmware ###
 # Download and install Bluetooth Firmware
-wget -N -P ~/Downloads https://github.com/winterheart/broadcom-bt-firmware/releases/latest/download/broadcom-bt-firmware-10.1.0.1115.deb
-sudo apt -qq install ~/Downloads/broadcom-bt-firmware-10.1.0.1115.deb
+wget -nv -N -P ~/Downloads https://github.com/winterheart/broadcom-bt-firmware/releases/latest/download/broadcom-bt-firmware-10.1.0.1115.deb
+sudo apt install ~/Downloads/broadcom-bt-firmware-10.1.0.1115.deb
 
 # Install brother scanner driver
-wget -N -P ~/Downloads https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb
+wget -nv -N -P ~/Downloads https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb
 sudo apt install ~/Downloads/brscan4-0.4.11-1.amd64.deb
 sudo brsaneconfig4 -a name=Scanner model=HLL2380DW ip=192.168.88.238 #Setup network scanner
 

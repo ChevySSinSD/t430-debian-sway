@@ -4,7 +4,7 @@
 sudo apt install sway swaybg swayidle waybar wofi
 
 ### Install Google Chrome ###
-wget -N -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -nv -N -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
 
 ### Install Audio Controls ###
@@ -15,6 +15,6 @@ sudo apt install tlp tlp-rdw acpi-call-dkms smartmontools
 
 # Install RobotoMono Hack Font ###
 sudo apt install unzip
-wget -N -P ~/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
+wget -nv -N -P ~/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
 unzip -qj ~/Downloads/RobotoMono.zip -d ~/.local/share/fonts/
 fc-cache -f -v
