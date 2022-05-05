@@ -1,11 +1,11 @@
-style=/home/eric/.config/wofi/powerMenu.css
+style=/home/eric/.config/wofi/dracula.css
 show=dmenu
 location=3
 prompt=
-x=-20
-y=10
+x=-10
+y=5
 columns=3
-width=350
-height=120
+width=450
+rows=2
 hide_search=true
 hide_scroll=true

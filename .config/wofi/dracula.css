@@ -1,41 +1,46 @@
-window {
-margin: 0;
-border: 0;
-border-radius: 20px;
-background-color: #282a36;
-opacity: 0.9;
+/*
+ *     _       __      _____    ________________
+ *    | |     / /___  / __(_)  / ____/ ___/ ___/
+ *    | | /| / / __ \/ /_/ /  / /    \__ \\__ \ 
+ *    | |/ |/ / /_/ / __/ /  / /___ ___/ /__/ / 
+ *    |__/|__/\____/_/ /_/   \____//____/____/  
+ *                                              
+ *    Purpose           Wofi style definition - Dracula Theme
+ *    Author            ChevySSinSD
+ *    Reference         https://github.com/dracula/rofi/blob/6d92bc04ba01655fb3645dabeecdfe38f59969a6/theme/config2.rasi
+ *
+ *    Dracula theme colour palette:
+ *      drac-bgd: #282a36;
+ *      drac-cur: #44475a;
+ *      drac-fgd: #f8f8f2;
+ *      drac-cmt: #6272a4;
+ *      drac-cya: #8be9fd;
+ *      drac-grn: #50fa7b;
+ *      drac-ora: #ffb86c;
+ *      drac-pnk: #ff79c6;
+ *      drac-pur: #bd93f9;
+ *      drac-red: #ff5555;
+ *      drac-yel: #f1fa8c;
+*/
+
+#window {
+    color: #f8f8f2;
+    background-color: #282a36;
+    opacity: 0.9;
+    margin: 0;
+    border-radius: 20px;
+    font: RobotoMono Nerd Font;
+    font-size: 16;
 }
 
-#input {
-opacity: 0.0;
+#entry {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
-#inner-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
-top: 200px;
-}
-
-#outer-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
-}
-
-#scroll {
-margin: 0px;
-border: none;
-}
-
-#text {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-} 
-
-#text:selected,
-#entry:selected {
-color: #282a36;
-background-color: #bd93f9;
+#entry:selected,
+#text:selected {
+    color: #282a36;
+    background-color: #ff79c6;
 }
