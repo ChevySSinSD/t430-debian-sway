@@ -13,7 +13,8 @@ case $op in
                 systemctl $op
                 ;;
         lock)
-		swaylock
+		swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallp
+apers/mount-fuji.jpg
                 ;;
         logout)
                 swaymsg exit

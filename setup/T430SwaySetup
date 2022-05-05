@@ -3,6 +3,14 @@
 ### Install Sway and tools ###
 sudo apt install sway swaybg swayidle waybar wofi
 
+### Install Swaylock from source ###
+sudo apt install meson/bullseye-backports fish libgdk-pixbuf-2.0-dev cmake pkg-config libwayland-dev wayland-protocols libxkbcommon-dev libcairo2-dev
+wget -nv -N -P ~/Downloads https://github.com/mortie/swaylock-effects/archive/refs/tags/v1.6-3.tar.gz
+(cd ~/Downloads; tar -xf v1.6-3.tar.gz; cd swaylock-effects-1.6-3; meson build; ninja -C build; sudo ninja -C build install; sudo chmod a+s /usr/local/bin/swaylock)
+
+### Install Light (Backlight Control)
+sudo apt install light
+
 ### Install Google Chrome ###
 wget -nv -N -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb

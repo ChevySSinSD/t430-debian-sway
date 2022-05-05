@@ -45,7 +45,7 @@ set $wallpapers_path $HOME/Pictures/Wallpapers
 #                                               
 
 # Set Font
-font pango:RobotoMono Hack 13
+font pango:RobotoMono Hack 14
 
 # Set Window Borders and Gaps
 default_border none
@@ -72,7 +72,6 @@ output LVDS-1 res 1920x1080 pos 1920 0
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
-
 #    ____  _             _               
 #   / ___|| |_ __ _ _ __| |_ _   _ _ __  
 #   \___ \| __/ _` | '__| __| | | | '_ \ 
@@ -83,7 +82,6 @@ bindswitch --reload --locked lid:off output $laptop enable
 # Check status of laptop whenever starting sway
 # https://github.com/swaywm/sway/wiki#clamshell-mode
 exec_always $HOME/.local/bin/clamshell.sh
-
 
 #    ___    _ _      
 #   |_ _|__| | | ___ 
@@ -98,10 +96,11 @@ exec_always $HOME/.local/bin/clamshell.sh
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
+	timeout 300 'swaylock swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallp
+apers/mount-fuji.jpg' \
         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock -f -c 000000'
-
+        before-sleep  'swaylock swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallp
+apers/mount-fuji.jpg'
 
 #    ___                   _   
 #   |_ _|_ __  _ __  _   _| |_ 
@@ -132,6 +131,10 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86AudioNext exec --no-startup-id playerctl next 
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Use light for backlight control
+bindsym XF86MonBrightnessUp exec light -T 1.1
+bindsym XF86MonBrightnessDown exec light -T 0.9
 
 # Start a terminal
 bindsym $mod+Return exec $term
