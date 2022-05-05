@@ -29,7 +29,7 @@ set $right l
 set $term foot
 
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu wofi -c $HOME/.config/wofi/runMenu
 
 # Laptop output variable
 set $laptop LVDS-1

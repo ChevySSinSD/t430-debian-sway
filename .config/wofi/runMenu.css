@@ -1,10 +1,11 @@
 window {
 margin: 0px;
-border: 2px solid #303030;
-border-radius: 25px;
-background-color: #080808;
-font-family: monospace;
+border: 2px solid #bd93f9;
+border-radius: 20px;
+background-color: #282a36;
+font-family: Roboto;
 font-size: 16px;
+opacity: 0.9;
 }
 
 #input {
@@ -24,15 +25,15 @@ margin: 5px;
 border: none;
 padding-left: 10px;
 padding-right: 10px;
-border-radius: 25px;
-background-color: #080808;
+border-radius: 20px;
+background-color: #282a36;
 }
 
 #outer-box {
 margin: 5px;
 border: none;
-background-color: #080808;
-border-radius: 25px;
+background-color: #282a36;
+border-radius: 20px;
 }
 
 #scroll {
@@ -43,17 +44,17 @@ border: none;
 #text {
 margin: 5px;
 border: none;
-color: #c6c6c6;
+color: #f8f8f2;
 } 
 
 #entry:selected {
-	background-color: #80a0ff;
+	background-color: #bd93f9;
 	font-weight: normal;
 	border-radius: 25px;
 }
 
 #text:selected {
-	background-color: #80a0ff;
-	color: #080808;
+	background-color: #bd93f9;
+	color: #282a36;
 	font-weight: normal;
 }

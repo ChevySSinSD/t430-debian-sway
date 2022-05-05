@@ -22,14 +22,16 @@ wget -nv -N -P ~/Downloads https://github.com/ryanoasis/nerd-fonts/releases/down
 unzip -qj ~/Downloads/RobotoMono.zip -d ~/.local/share/fonts/
 fc-cache -f -v
 
-### Install Dracula GTK Theme, Icons, Cursors ###
+### Install Dracula GTK Theme ###
 sudo apt install libglib2.0-bin
 wget -nv -N -P ~/Downloads https://github.com/dracula/gtk/releases/latest/download/Dracula.tar.xz
 tar -xf ~/Downloads/Dracula.tar.xz --directory ~/.themes
-wget -nv -N -P ~/Downloads https://github.com/dracula/gtk/files/5214870/Dracula.zip
-unzip -q ~/Downloads/Dracula.zip -d ~/.icons/
 gsettings set org.gnome.desktop.interface gtk-theme 'Dracula'
-gsettings set org.gnome.desktop.interface icon-theme 'Dracula'
-gsettings set org.gnome.desktop.interface cursor-theme 'Simp1e'
+
+### Set GTK Font ###
 gsettings set org.gnome.desktop.interface font-name 'Roboto 13'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 13'
+
+### Install Papirus Icons ###
+sudo apt install papirus-icon-theme
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'

@@ -1,0 +1,11 @@
+style=/home/eric/.config/wofi/powerMenu.css
+show=dmenu
+location=3
+prompt=
+x=-20
+y=10
+columns=3
+width=350
+height=120
+hide_search=true
+hide_scroll=true
