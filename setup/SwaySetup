@@ -1,0 +1,7 @@
+#!/bin/bash
+
+### Install SwayWM and tools ###
+sudo apt update -qq && sudo apt upgrade && sudo apt autoremove
+sudo apt install sway swayidle waybar wofi light pulseaudio pamix playerctl tlp tlp-rdw acpi-call-dkms smartmontools
+
+sudo reboot
