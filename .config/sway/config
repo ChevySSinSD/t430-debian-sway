@@ -97,8 +97,8 @@ exec_always $HOME/.local/bin/clamshell.sh
 
 exec swayidle -w \
 	timeout 300 'swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallpapers/mount-fuji.jpg' \
-        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallpapers/mount-fuji.jpg'
+        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on" \
+	before-sleep 'swaylock --clock --indicator -i ~/Pictures/Wallpapers/mount-fuji.jpg'
 
 #    ___                   _   
 #   |_ _|_ __  _ __  _   _| |_ 

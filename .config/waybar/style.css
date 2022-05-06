@@ -48,6 +48,10 @@ window#waybar.hidden {
     opacity: 0.9;
 }
 
+#custom-updater {
+    background-color: #ff5555
+}
+
 #window,
 #workspaces {
     border-radius: 20px;
@@ -55,7 +59,7 @@ window#waybar.hidden {
 
 #window {
     min-width: 250px;
-    margin: 0 5px;
+    margin: 0 25px;
 }
 
 #workspaces {
@@ -64,6 +68,7 @@ window#waybar.hidden {
 
 #workspaces button {
     color: #f8f8f2;
+    border-bottom: 3px solid #282a36;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -127,6 +132,7 @@ window#waybar.hidden {
     background-color: #FF5555;
 }
 
-#idle_inhibitor {
+#pulseaudio {
     border-radius: 20px 0px 0px 20px;
+    padding-left: 25px;
 }

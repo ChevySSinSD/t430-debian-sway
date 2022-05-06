@@ -1,8 +1,8 @@
-style=/home/eric/.config/wofi/runMenu.css
+style=/home/eric/.config/wofi/dracula.css
 position=5
 show=drun
-width=800
-columns=2
+width=1000
+columns=3
 lines=8
 allow_images=true
 always_parse_args=true
