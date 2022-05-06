@@ -32,7 +32,7 @@ set $right l
 set $term foot
 
 # Your preferred application launcher
-set $menu wofi -c $HOME/.config/wofi/runMenu
+set $menu wofi -c $HOME/.config/wofi/drunMenu
 
 # Laptop output variable
 set $laptop LVDS-1
@@ -97,7 +97,6 @@ exec_always $HOME/.local/bin/clamshell.sh
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-
 exec swayidle -w \
 	timeout 300 'swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallpapers/mount-fuji.jpg' \
         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on" \
@@ -112,7 +111,6 @@ exec swayidle -w \
 
 # Set NumLock on
 input * xkb_numlock enable
-
 
 #    _  __            ____  _           _ _                 
 #   | |/ /___ _   _  | __ )(_)_ __   __| (_)_ __   __ _ ___ 
@@ -160,7 +158,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around:
-
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
