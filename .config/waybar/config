@@ -5,8 +5,9 @@
 //  |__/|__/\__,_/\__, /_.___/\__,_/_/     
 //               /____/                    
 //
-
+// https://github.com/Alexays/Waybar/wiki/Module%3A-Custom
 // https://github.com/DN-debug/waybar-examples/blob/main/waybar-examples/wayfire/layout2/config-wayfire
+
 {
     "layer": "top",
     "position": "top",
@@ -51,11 +52,6 @@
 	"tooltip": false,
         "interval": 45
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
@@ -91,14 +87,13 @@
         "format-icons": ["", "", "", "", "", "", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ",
         "format-ethernet": "Connected  ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
+        //"on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -134,7 +129,7 @@
     "custom/power":{
         "format": "⏻",
         "on-click": "~/.local/bin/powermenu.sh",
-	"tooltip": "false"
+	"tooltip": false
     },
     "custom/updater":{
         "format": "{} ",

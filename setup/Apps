@@ -4,3 +4,21 @@
 echo "Downloading Google Chrome..."
 wget -nv -N -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
+
+### Install Libreoffice Calc ###
+sudo apt install libreoffice-core libreoffice-calc libreoffice-gtk3
+
+# Install LibreOffice numbertext extension
+wget -N -P ~/Downloads https://extensions.libreoffice.org/assets/downloads/z/numbertext-1-0-5.oxt
+sudo /usr/lib/libreoffice/program/unopkg add ~/Downloads/numbertext-1-0-5.oxt --shared -s -f
+
+# Install LibreOffice icon theme
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-libreoffice-theme/master/install-papirus-root.sh | sh
+
+# Install Spotifyd
+wget -N -P ~/Downloads https://github.com/Spotifyd/spotifyd/releases/latest/download/spotifyd-linux-full.tar.gz
+tar -xf ~/Downloads/spotifyd-linux-full.tar.gz --directory ~/.local/bin
+
+# Install Spotify TUI
+wget -N -P ~/Downloads https://github.com/Rigellute/spotify-tui/releases/latest/download/spotify-tui-linux.tar.gz
+tar -xf ~/Downloads/spotify-tui-linux.tar.gz --directory ~/.local/bin

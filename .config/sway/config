@@ -4,7 +4,6 @@
 #   ___/ / |/ |/ / /_/ / /_/ /    | |/ |/ / /  / /  
 #  /____/|__/|__/\__,_/\__, /     |__/|__/_/  /_/   
 #                     /____/                        
-
 # Purpose       Sway configuration
 # Github        https://github.com/ChevySSinSD/t430-debian-sway/tree/master/.config/sway
 # Reference	https://github.com/swaywm/sway/wiki#configuration
