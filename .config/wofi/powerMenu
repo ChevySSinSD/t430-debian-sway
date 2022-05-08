@@ -1,4 +1,5 @@
-style=/home/eric/.config/wofi/dracula.css
+stylesheet=dracula.css
+colors=dracula.colors
 show=dmenu
 location=3
 prompt=

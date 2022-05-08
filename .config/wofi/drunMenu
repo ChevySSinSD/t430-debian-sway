@@ -1,4 +1,5 @@
-style=/home/eric/.config/wofi/dracula.css
+stylesheet=dracula.css
+colors=dracula.colors
 position=5
 show=drun
 width=1000

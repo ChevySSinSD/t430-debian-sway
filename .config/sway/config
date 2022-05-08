@@ -37,7 +37,7 @@ set $menu wofi -c $HOME/.config/wofi/drunMenu
 set $laptop LVDS-1
 
 # Directory for wallpapers
-set $wallpapers_path $HOME/Pictures/Wallpapers
+set $wallpapers_path `find $HOME/Pictures/Wallpapers -type f | shuf -n 1`
 
 #   __        ___           _                   
 #   \ \      / (_)_ __   __| | _____      _____ 
@@ -47,7 +47,7 @@ set $wallpapers_path $HOME/Pictures/Wallpapers
 #                                               
 
 # Set Font
-font pango:RobotoMono Hack 14
+font pango:Roboto 13
 
 # Set Window Borders and Gaps
 default_border none
@@ -62,7 +62,7 @@ gaps inner 5
 #                   |_|              
 
 # Random wallpaper
-output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+output * bg $wallpapers_path fill
 
 # Multihead (Dual Display) Configuration
 # https://github.com/swaywm/sway/wiki#multihead
@@ -96,10 +96,11 @@ exec_always $HOME/.local/bin/clamshell.sh
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
 exec swayidle -w \
-	timeout 300 'swaylock --clock --indicator --fade-in 0.2 -i ~/Pictures/Wallpapers/mount-fuji.jpg' \
-        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on" \
-	before-sleep 'swaylock --clock --indicator -i ~/Pictures/Wallpapers/mount-fuji.jpg'
+         timeout 300 'swaylock -f' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f'
 
 #    ___                   _   
 #   |_ _|_ __  _ __  _   _| |_ 

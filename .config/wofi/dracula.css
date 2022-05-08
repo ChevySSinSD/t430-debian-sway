@@ -9,28 +9,32 @@
  *    Author            ChevySSinSD
  *    Reference         https://github.com/dracula/rofi/blob/6d92bc04ba01655fb3645dabeecdfe38f59969a6/theme/config2.rasi
  *
- *    Dracula theme colour palette:
- *      drac-bgd: #282a36;
- *      drac-cur: #44475a;
- *      drac-fgd: #f8f8f2;
- *      drac-cmt: #6272a4;
- *      drac-cya: #8be9fd;
- *      drac-grn: #50fa7b;
- *      drac-ora: #ffb86c;
- *      drac-pnk: #ff79c6;
- *      drac-pur: #bd93f9;
- *      drac-red: #ff5555;
- *      drac-yel: #f1fa8c;
+ *    Dracula theme colors
+ *      wofi-color0: drac-bgd: #282a36;
+ *      wofi-color1: drac-cur: #44475a;
+ *      wofi-color2: drac-fgd: #f8f8f2;
+ *      wofi-color3: drac-cmt: #6272a4;
+ *      wofi-color4: drac-cya: #8be9fd;
+ *      wofi-color5: drac-grn: #50fa7b;
+ *      wofi-color6: drac-ora: #ffb86c;
+ *      wofi-color7: drac-pnk: #ff79c6;
+ *      wofi-color8: drac-pur: #bd93f9;
+ *      wofi-color9: drac-red: #ff5555;
+ *      wofi-color10: drac-yel: #f1fa8c;
 */
 
 #window {
-    color: #f8f8f2;
-    background-color: #282a36;
-    opacity: 0.9;
-    margin: 0;
+    color: --wofi-color2;
+    background-color: --wofi-color0;
     border-radius: 20px;
+    opacity: 0.9;
     font: Roboto,RobotoMono Nerd Font;
     font-size: 16;
+}
+
+#input {
+    background-color: --wofi-color1;
+    border-radius: 20px;
 }
 
 #entry {
@@ -41,6 +45,6 @@
 
 #entry:selected,
 #text:selected {
-    color: #282a36;
-    background-color: #ff79c6;
+    color: --wofi-color0;
+    background-color: --wofi-color8;
 }
