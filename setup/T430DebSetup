@@ -66,19 +66,8 @@ sudo apt update && sudo apt upgrade && sudo apt autoremove
 wget -nv -N -P ~/Downloads https://github.com/winterheart/broadcom-bt-firmware/releases/latest/download/broadcom-bt-firmware-10.1.0.1115.deb
 sudo apt install ~/Downloads/broadcom-bt-firmware-10.1.0.1115.deb
 
-# Install brother scanner driver
-wget -nv -N -P ~/Downloads https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb
-sudo apt install ~/Downloads/brscan4-0.4.11-1.amd64.deb
-sudo brsaneconfig4 -a name=Scanner model=HLL2380DW ip=192.168.88.238 #Setup network scanner
-
-### Apt packages - Install ###
-#	neofetch				TUI System info tool
-#	htop					TUI System process monitor tool
-#	git					Software version control
-#	gh					GitHub CLI
-sudo apt install neofetch htop git gh
-
-### Git and GitHub Setup ###
+### Git and Github Install ###
+sudo apt install git gh
 
 # Git Config
 git config --global user.name "ChevySSinSD"

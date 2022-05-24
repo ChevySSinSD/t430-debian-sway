@@ -1,5 +1,12 @@
 #!/bin/bash
 
+### Update and upgrade apt ###
+sudo apt update && sudo apt upgrade
+
+### Make Directories ###
+mkdir -p ~/.local/share/fonts/
+mkdir -p ~/.themes
+
 ### Install Sway and tools ###
 sudo apt install sway swaybg swayidle waybar wofi
 
@@ -33,13 +40,17 @@ fc-cache -f -v
 ### Install Dracula GTK Theme ###
 sudo apt install libglib2.0-bin
 wget -nv -N -P ~/Downloads https://github.com/dracula/gtk/releases/latest/download/Dracula.tar.xz
-tar -xf ~/Downloads/Dracula.tar.xz --directory ~/.themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Dracula'
 
-### Set GTK Font ###
-gsettings set org.gnome.desktop.interface font-name 'Roboto 13'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 13'
+### Install Printer and Scanner ###
 
-### Install Papirus Icons ###
-sudo apt install papirus-icon-theme
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+# Install brother scanner driver
+wget -nv -N -P ~/Downloads https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb
+sudo apt install ~/Downloads/brscan4-0.4.11-1.amd64.deb
+sudo brsaneconfig4 -a name=Scanner model=HLL2380DW ip=192.168.88.238 #Setup network scanner
+
+# Install printer setup
+sudo apt install cups
+
+### Cleanup ###
+sudo apt autoremove
+sudo reboot
