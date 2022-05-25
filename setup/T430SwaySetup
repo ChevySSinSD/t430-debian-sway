@@ -52,5 +52,6 @@ sudo brsaneconfig4 -a name=Scanner model=HLL2380DW ip=192.168.88.238 #Setup netw
 sudo apt install cups
 
 ### Cleanup ###
+sudo apt remove termit # Termit does not work, use foot instead
 sudo apt autoremove
 sudo reboot
