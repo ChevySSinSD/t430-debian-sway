@@ -135,6 +135,17 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec light -T 1.1
 bindsym XF86MonBrightnessDown exec light -T 0.9
 
+# Screenshots:
+# Super+P: Current window
+# Super+Shift+p: Select area
+# Super+Alt+p Current output
+# Super+Ctrl+p Select a window
+
+bindsym $mod+p       exec grimshot save active
+bindsym $mod+Shift+p exec grimshot save area
+bindsym $mod+Alt+p  exec grimshot save output
+bindsym $mod+Ctrl+p  exec grimshot save window
+
 # Start a terminal
 bindsym $mod+Return exec $term
 

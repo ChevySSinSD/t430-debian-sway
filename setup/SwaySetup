@@ -4,11 +4,12 @@
 sudo apt update && sudo apt upgrade
 
 ### Make Directories ###
+xdg-user-dirs-update
 mkdir -p ~/.local/share/fonts/
 mkdir -p ~/.themes
 
 ### Install Sway and tools ###
-sudo apt install sway swaybg swayidle waybar wofi
+sudo apt install sway swaybg swayidle grimshot waybar wofi
 
 ### Install Swaylock from source ###
 sudo apt install meson/bullseye-backports fish libgdk-pixbuf-2.0-dev cmake pkg-config libwayland-dev wayland-protocols libxkbcommon-dev libcairo2-dev
