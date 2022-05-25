@@ -38,7 +38,6 @@ window#waybar.hidden {
 #mode,
 #idle_inhibitor,
 #mpd,
-#custom-updater,
 #temperature,
 #workspaces,
 #window {
@@ -46,10 +45,6 @@ window#waybar.hidden {
     color: #f8f8f2;
     background-color: #282A36;
     opacity: 0.9;
-}
-
-#custom-updater {
-    background-color: #ff5555
 }
 
 #window,
@@ -128,6 +123,7 @@ window#waybar.hidden {
     margin-right: 5px;
 }
 
+#custom-updater.critical,
 #temperature.critical {
     background-color: #FF5555;
 }
