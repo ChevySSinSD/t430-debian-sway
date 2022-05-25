@@ -1,0 +1,26 @@
+#282a36
+#44475a
+#f8f8f2
+#6272a4
+#8be9fd
+#50fa7b
+#ffb86c
+#ff79c6
+#bd93f9
+#ff5555
+#f1fa8c
+
+/*
+ *    Dracula theme colors
+ *      wofi-color0: drac-bgd: #282a36;
+ *      wofi-color1: drac-cur: #44475a;
+ *      wofi-color2: drac-fgd: #f8f8f2;
+ *      wofi-color3: drac-cmt: #6272a4;
+ *      wofi-color4: drac-cya: #8be9fd;
+ *      wofi-color5: drac-grn: #50fa7b;
+ *      wofi-color6: drac-ora: #ffb86c;
+ *      wofi-color7: drac-pnk: #ff79c6;
+ *      wofi-color8: drac-pur: #bd93f9;
+ *      wofi-color9: drac-red: #ff5555;
+ *      wofi-color10: drac-yel: #f1fa8c;
+*/
