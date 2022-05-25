@@ -9,7 +9,7 @@
 # Reference	https://github.com/swaywm/sway/wiki#configuration
 
 # Disable X support
-xwayland disable
+#xwayland disable
 
 #   __     __         _       _     _           
 #   \ \   / /_ _ _ __(_) __ _| |__ | | ___  ___ 

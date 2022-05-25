@@ -21,6 +21,8 @@ tar -xf ~/Downloads/spotify-tui-linux.tar.gz --directory ~/.local/bin
 # Install TUI Apps
 sudo apt install neofetch htop ranger
 
+sudo apt install inkscape gimp wine
+
 ### Install rclone (for Google Drive)
 sudo apt install rclone
 
