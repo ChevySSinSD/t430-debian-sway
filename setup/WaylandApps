@@ -37,6 +37,7 @@ sudo apt install papirus-icon-theme
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 # Clean Up
+sudo apt remove /usr/share/applications/display-im6.q16.desktop
 sudo apt remove w3m imagemagick
 sudo apt upgrade && sudo apt autoremove
 sudo reboot
