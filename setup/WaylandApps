@@ -22,7 +22,7 @@ wget -N -P ~/Downloads https://github.com/Rigellute/spotify-tui/releases/latest/
 tar -xf ~/Downloads/spotify-tui-linux.tar.gz --directory ~/.local/bin
 
 # Install TUI Apps
-sudo apt install neofetch htop ranger inkscape rclone
+sudo apt install neofetch btop ranger inkscape rclone
 
 ### Set GTK Theme ###
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
