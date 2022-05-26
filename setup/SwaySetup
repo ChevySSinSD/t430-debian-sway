@@ -34,7 +34,7 @@ sudo apt install tlp tlp-rdw acpi-call-dkms smartmontools
 sudo apt install playerctl
 
 ### Install RobotoMono Hack Font ###
-sudo apt install unzip
+sudo apt install unzip fonts-roboto
 wget -nv -N -P ~/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
 unzip -qj ~/Downloads/RobotoMono.zip -d ~/.local/share/fonts/
 fc-cache -f -v
