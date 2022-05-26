@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update apt
+sudo apt update
+
 ### Install Libreoffice Calc ###
 sudo apt install libreoffice-core libreoffice-calc libreoffice-gtk3
 
@@ -19,12 +22,7 @@ wget -N -P ~/Downloads https://github.com/Rigellute/spotify-tui/releases/latest/
 tar -xf ~/Downloads/spotify-tui-linux.tar.gz --directory ~/.local/bin
 
 # Install TUI Apps
-sudo apt install neofetch htop ranger
-
-sudo apt install inkscape gimp wine
-
-### Install rclone (for Google Drive)
-sudo apt install rclone
+sudo apt install neofetch htop ranger inkscape rclone
 
 ### Set GTK Theme ###
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
@@ -37,3 +35,8 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 13'
 ### Install Papirus Icons ###
 sudo apt install papirus-icon-theme
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+
+# Clean Up
+sudo apt remove w3m imagemagick
+sudo apt upgrade && sudo apt autoremove
+sudo reboot
