@@ -42,6 +42,7 @@ fc-cache -f -v
 ### Install Dracula GTK Theme ###
 sudo apt install libglib2.0-bin
 wget -nv -N -P ~/Downloads https://github.com/dracula/gtk/releases/latest/download/Dracula.tar.xz
+tar -xf ~/Downloads/Dracula.tar.xz --directory ~/.themes
 
 ### Install Printer and Scanner ###
 

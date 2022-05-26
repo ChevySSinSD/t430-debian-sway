@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Update apt
+sudo apt update
+
+### X Apps ###
+sudo apt install xwayland gimp wine
+
+# Clean Up
+sudo apt upgrade && sudo apt autoremove
+sudo reboot
